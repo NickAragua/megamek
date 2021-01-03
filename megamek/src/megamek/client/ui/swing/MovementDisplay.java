@@ -125,6 +125,7 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
         MOVE_CLIMB_MODE("moveClimbMode", CMD_MECH | CMD_TANK | CMD_INF), //$NON-NLS-1$
         MOVE_SWIM("moveSwim", CMD_MECH), //$NON-NLS-1$
         MOVE_SHAKE_OFF("moveShakeOff", CMD_TANK | CMD_VTOL), //$NON-NLS-1$
+        MOVE_SPEED_DEMON("moveSpeedDemon", CMD_ALL),
         //Convert command for a single button, which can cycle through modes because MovePath state is available
         MOVE_MODE_CONVERT("moveModeConvert", CMD_CONVERTER), //$NON-NLS-1$
         //Convert commands used for menus, where the MovePath state is unknown.
@@ -887,6 +888,7 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
         updateDropButton();
         updateConvertModeButton();
         updateRecklessButton();
+        updateSpeedDemonButton();
         updateHoverButton();
         updateManeuverButton();
         updateStrafeButton();
@@ -933,7 +935,7 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
         } else {
             getBtn(MoveCommand.MOVE_CALL_SUPPORT).setEnabled(false);
         }
-
+        
         getBtn(MoveCommand.MOVE_SHAKE_OFF).setEnabled(
                 (ce instanceof Tank)
                 && (ce.getSwarmAttackerId() != Entity.NONE));
@@ -1119,6 +1121,7 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
         setManeuverEnabled(false);
         setStrafeEnabled(false);
         setBombEnabled(false);
+        setSpeedDemonEnabled(false);
 
         getBtn(MoveCommand.MOVE_CLIMB_MODE).setEnabled(false);
         getBtn(MoveCommand.MOVE_DIG_IN).setEnabled(false);
@@ -1145,6 +1148,7 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
         ce.setCarefulStand(false);
         ce.setIsJumpingNow(false);
         ce.setConvertingNow(false);
+        ce.setUsingSpeedDemon(false);
         ce.setClimbMode(GUIPreferences.getInstance().getBoolean(GUIPreferences.ADVANCED_MOVE_DEFAULT_CLIMB_MODE));
 
         // switch back from swimming to normal mode.
@@ -1183,6 +1187,7 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
         updateDropButton();
         updateConvertModeButton();
         updateRecklessButton();
+        updateSpeedDemonButton();
         updateHoverButton();
         updateManeuverButton();
         updateAeroButtons();
@@ -2023,6 +2028,7 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
             updateDropButton();
             updateConvertModeButton();
             updateRecklessButton();
+            updateSpeedDemonButton();
             updateHoverButton();
             updateManeuverButton();
             updateSpeedButtons();
@@ -2690,6 +2696,23 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
             setRecklessEnabled(false);
         } else {
             setRecklessEnabled((null == cmd) || (cmd.length() == 0));
+        }
+    }
+    
+    private void updateSpeedDemonButton() {
+        final Entity ce = ce();
+
+        if (null == ce) {
+            return;
+        }
+        
+        // the following things are incompatible with "speed demon":
+        // being immobile, jumping, attacks of any type (charge/DFA)
+        if (ce.isImmobile() || ce.isPermanentlyImmobilized(true) || ce.isUsingSpeedDemon() || 
+                ((cmd != null) && (cmd.isJumping() || cmd.contains(MoveStepType.CHARGE) || cmd.contains(MoveStepType.DFA)))) {
+            setSpeedDemonEnabled(false);
+        } else {
+            setSpeedDemonEnabled(ce.hasAbility(OptionsConstants.PILOT_SPEED_DEMON));
         }
     }
 
@@ -5314,6 +5337,9 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
                     clientgui.getClient().sendUpdateEntity(e);
                 }
             }
+        } else if (actionCmd.equals(MoveCommand.MOVE_SPEED_DEMON.getCmd())) {
+            ce().setUsingSpeedDemon(true);
+            cmd.addStep(MoveStepType.SPEED_DEMON);
         }
         updateProneButtons();
         updateRACButton();
@@ -5328,6 +5354,7 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
         updateDropButton();
         updateConvertModeButton();
         updateRecklessButton();
+        updateSpeedDemonButton();
         updateHoverButton();
         updateManeuverButton();
         updateDumpButton();
@@ -5810,6 +5837,11 @@ public class MovementDisplay extends StatusBarPhaseDisplay {
     private void setBombEnabled(boolean enabled) {
         getBtn(MoveCommand.MOVE_BOMB).setEnabled(enabled);
         clientgui.getMenuBar().setMoveBombEnabled(enabled);
+    }
+    
+    private void setSpeedDemonEnabled(boolean enabled) {
+        getBtn(MoveCommand.MOVE_SPEED_DEMON).setEnabled(enabled);
+        clientgui.getMenuBar().setMoveSpeedDemonEnabled(enabled);
     }
 
     /**

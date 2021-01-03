@@ -2391,6 +2391,10 @@ public class Compute {
         } else if (movement == EntityMovementType.MOVE_SPRINT
                 || movement == EntityMovementType.MOVE_VTOL_SPRINT) {
             return new ToHitData(TargetRoll.AUTOMATIC_FAIL, "attacker sprinted");
+        } 
+
+        if (entity.isUsingSpeedDemon()) {
+            return new ToHitData(TargetRoll.AUTOMATIC_FAIL, "attacker used speed demon SPA");
         }
 
         //Dual cockpit with both pilot and gunner has lower modifier for attacker movement.

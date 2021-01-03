@@ -1063,14 +1063,14 @@ public abstract class Mech extends Entity {
         if (hasArmedMASCAndSuperCharger()) {
             return ((int) Math.ceil(getWalkMP(gravity, ignoreheat,
                     ignoremodulararmor) * 2.5))
-                    - (hasMPReducingHardenedArmor() ? 1 : 0);
+                    + getFixedMPAdjustment(false);
         }
         if (hasArmedMASC()) {
             return (getWalkMP(gravity, ignoreheat, ignoremodulararmor) * 2)
-                    - (hasMPReducingHardenedArmor() ? 1 : 0);
+                    + getFixedMPAdjustment(false);
         }
         return Math.max(0, super.getRunMP(gravity, ignoreheat, ignoremodulararmor)
-                - (hasMPReducingHardenedArmor() ? 1 : 0));
+                + getFixedMPAdjustment(false));
     }
 
     /*
@@ -1082,7 +1082,7 @@ public abstract class Mech extends Entity {
     public int getRunMPwithoutMASC(boolean gravity, boolean ignoreheat,
             boolean ignoremodulararmor) {
         return super.getRunMP(gravity, ignoreheat, ignoremodulararmor)
-                - (hasMPReducingHardenedArmor() ? 1 : 0);
+                + getFixedMPAdjustment(false);
     }
 
     /**
@@ -1091,7 +1091,7 @@ public abstract class Mech extends Entity {
      */
     public int getOriginalRunMPwithoutMASC() {
         return super.getOriginalRunMP()
-                - (hasMPReducingHardenedArmor() ? 1 : 0);
+                + getFixedMPAdjustment(false);
     }
 
     /**
@@ -1141,12 +1141,12 @@ public abstract class Mech extends Entity {
         if (hasArmedMASCAndSuperCharger()) {
             return ((int) Math.ceil(getWalkMP(gravity, ignoreheat,
                     ignoremodulararmor) * 3.0))
-                    - (hasMPReducingHardenedArmor() ? 1 : 0);
+                    + getFixedMPAdjustment(true);
         }
         if (hasArmedMASC()) {
             return ((int) Math.ceil(getWalkMP(gravity, ignoreheat,
                     ignoremodulararmor) * 2.5))
-                    - (hasMPReducingHardenedArmor() ? 1 : 0);
+                    + getFixedMPAdjustment(true);
         }
         return getSprintMPwithoutMASC(gravity, ignoreheat, ignoremodulararmor);
     }
@@ -1175,11 +1175,11 @@ public abstract class Mech extends Entity {
         }
         return ((int) Math.ceil(getWalkMP(gravity, ignoreheat,
                 ignoremodulararmor) * 2.0))
-                - (hasMPReducingHardenedArmor() ? 1 : 0);
+                + getFixedMPAdjustment(true);
     }
 
     public int getOriginalSprintMPwithoutMASC() {
-        return ((int) Math.ceil(getOriginalWalkMP() * 2.0)) - (hasMPReducingHardenedArmor() ? 1 : 0);
+        return ((int) Math.ceil(getOriginalWalkMP() * 2.0)) + getFixedMPAdjustment(true);
     }
 
     /**
@@ -9059,6 +9059,14 @@ public abstract class Mech extends Entity {
 
     public void setCoolingFlawActive(boolean flawActive) {
         coolingFlawActive = flawActive;
+    }
+    
+    /**
+     * Convenience function that returns the fixed, linear MP adjustments.
+     * E.g. the -1 for hardened armor and +2 for using 'speed demon'.
+     */
+    private int getFixedMPAdjustment(boolean sprint) {
+        return (hasMPReducingHardenedArmor() ? -1 : 0) + (isUsingSpeedDemon() ? (sprint ? 2 : 1) : 0);
     }
 
     /**

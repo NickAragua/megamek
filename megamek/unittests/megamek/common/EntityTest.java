@@ -17,6 +17,7 @@ package megamek.common;
 import junit.framework.TestCase;
 import megamek.common.Entity;
 import megamek.common.MechFileParser;
+import megamek.common.options.OptionsConstants;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -98,4 +99,123 @@ public class EntityTest {
         }
     }
     
+    @Test
+    public void testGetRunMPMascChargerSpeedDemon() {
+        File f; 
+        MechFileParser mfp;
+        Entity e;
+        
+        // get 
+        try {
+            // this is a 5/8 (13) unit with a MASC and supercharger
+            f = new File("data/mechfiles/mechs/3145/Steiner/Gauntlet GTL-1O.mtf");
+            mfp  = new MechFileParser(f);
+            e = mfp.getEntity();
+            e.setCrew(new Crew(CrewType.SINGLE));
+            e.getCrew().getOptions().initialize();
+
+            int expectedRunMPNormal = 8;
+            int expectedRunMPSpeedDemon = 9;
+            int expectedSprintMPNormal = 10;
+            int expectedSprintMPSpeedDemon = 12;
+            int expectedRunMPMascSuperCharger = 13;
+            int expectedRunMPMascSuperChargerSpeedDemon = 14;
+            int expectedSprintMPMascSuperCharger = 15;
+            int expectedSprintMPMascSuperChargerSpeedDemon = 17;
+
+            
+            TestCase.assertEquals(expectedRunMPNormal, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPMascSuperCharger, e.getRunMP());
+            TestCase.assertEquals(expectedSprintMPNormal, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPMascSuperCharger, e.getSprintMP());
+            
+            e.setUsingSpeedDemon(true);
+            
+            TestCase.assertEquals(expectedRunMPSpeedDemon, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPMascSuperChargerSpeedDemon, e.getRunMP());
+            TestCase.assertEquals(expectedSprintMPSpeedDemon, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPMascSuperChargerSpeedDemon, e.getSprintMP());
+            
+        } catch (Exception exc){
+            TestCase.fail(exc.getMessage());
+        }
+    }
+    
+    @Test
+    public void testGetRunMPProtoMechSpeedDemon() {
+        File f; 
+        MechFileParser mfp;
+        Entity e;
+        
+        // get 
+        try {
+            // this is a 6/9 protomech
+            f = new File("data/mechfiles/protomechs/3060/Centaur 2.blk");
+            mfp  = new MechFileParser(f);
+            e = mfp.getEntity();
+            e.setCrew(new Crew(CrewType.SINGLE));
+            e.getCrew().getOptions().initialize();
+
+            int expectedRunMPNormal = 9;
+            int expectedRunMPSpeedDemon = 10;
+            // it's a trick, protomechs can't sprint
+            int expectedSprintMPNormal = 9;
+            int expectedSprintMPNormalSpeedDemon = 10;
+            
+            TestCase.assertEquals(expectedRunMPNormal, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPNormal, e.getSprintMPwithoutMASC());
+            
+            e.setUsingSpeedDemon(true);
+            
+            TestCase.assertEquals(expectedRunMPSpeedDemon, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPNormalSpeedDemon, e.getSprintMPwithoutMASC());
+            
+        } catch (Exception exc){
+            TestCase.fail(exc.getMessage());
+        }
+    }
+    
+    @Test
+    public void testGetRunMPTankSpeedDemon() {
+        File f; 
+        MechFileParser mfp;
+        Entity e;
+        
+        // get 
+        try {
+            // this is an 11/17 (22) tank with a supercharger
+            f = new File("data/mechfiles/vehicles/3145/Republic/Scapha Hovertank (Primary).blk");
+            mfp  = new MechFileParser(f);
+            e = mfp.getEntity();
+            e.setCrew(new Crew(CrewType.CREW));
+            e.getCrew().getOptions().initialize();
+            e.setGame(new Game());
+            e.getGame().getOptions().getOption(OptionsConstants.ADVGRNDMOV_VEHICLE_ADVANCED_MANEUVERS).setValue(true);
+
+            int expectedRunMPNormal = 17;
+            int expectedRunMPSpeedDemon = 18;
+            int expectedSprintMPNormal = 22;
+            int expectedSprintMPSpeedDemon = 24;
+            int expectedRunMPMascSuperCharger = 22;
+            int expectedRunMPMascSuperChargerSpeedDemon = 23;
+            int expectedSprintMPMascSuperCharger = 28;
+            int expectedSprintMPMascSuperChargerSpeedDemon = 30;
+
+            
+            TestCase.assertEquals(expectedRunMPNormal, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPMascSuperCharger, e.getRunMP());
+            TestCase.assertEquals(expectedSprintMPNormal, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPMascSuperCharger, e.getSprintMP());
+            
+            e.setUsingSpeedDemon(true);
+            
+            TestCase.assertEquals(expectedRunMPSpeedDemon, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPMascSuperChargerSpeedDemon, e.getRunMP());
+            TestCase.assertEquals(expectedSprintMPSpeedDemon, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPMascSuperChargerSpeedDemon, e.getSprintMP());
+            
+        } catch (Exception exc){
+            TestCase.fail(exc.getMessage());
+        }
+    }
 }

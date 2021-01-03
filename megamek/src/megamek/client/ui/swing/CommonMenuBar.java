@@ -152,6 +152,7 @@ public class CommonMenuBar extends JMenuBar implements ActionListener,
     private JMenuItem moveShutdown;
     private JMenuItem moveStartup;
     private JMenuItem moveSelfDestruct;
+    private JMenuItem moveSpeedDemon;
     //private JMenuItem moveTraitor;
     private JMenuItem moveAcc;
     private JMenuItem moveDec;
@@ -545,6 +546,9 @@ public class CommonMenuBar extends JMenuBar implements ActionListener,
         moveBackUp = createMenuItem(
                 menu,
                 Messages.getString("CommonMenuBar.moveBackUp"), MovementDisplay.MoveCommand.MOVE_BACK_UP.getCmd()); //$NON-NLS-1$
+        moveSpeedDemon = createMenuItem(
+                menu,
+                Messages.getString("CommonMenuBar.moveSpeedDemon"), MovementDisplay.MoveCommand.MOVE_SPEED_DEMON.getCmd());
         moveGetUp = createMenuItem(
                 menu,
                 Messages.getString("CommonMenuBar.moveGetUp"), MovementDisplay.MoveCommand.MOVE_GET_UP.getCmd()); //$NON-NLS-1$
@@ -583,6 +587,7 @@ public class CommonMenuBar extends JMenuBar implements ActionListener,
         moveSelfDestruct = createMenuItem(
                 menu,
                 Messages.getString("CommonMenuBar.moveSelfDestruct"), MovementDisplay.MoveCommand.MOVE_SELF_DESTRUCT.getCmd()); //$NON-NLS-1$
+                
         /* TODO: moveTraitor = createMenuItem(
                 menu,
                 Messages.getString("CommonMenuBar.moveTraitor"), MovementDisplay.MOVE_TRAITOR); //$NON-NLS-1$ */
@@ -1250,6 +1255,9 @@ public class CommonMenuBar extends JMenuBar implements ActionListener,
     }
     public synchronized void setMoveSelfDestructEnabled(boolean enabled) {
         moveSelfDestruct.setEnabled(enabled);
+    }
+    public synchronized void setMoveSpeedDemonEnabled(boolean enabled) {
+        moveSpeedDemon.setEnabled(enabled);
     }
     public synchronized void setMoveTraitorEnabled(boolean enabled) {
         //TODO: moveTraitor.setEnabled(enabled);

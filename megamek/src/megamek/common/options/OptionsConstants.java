@@ -161,7 +161,7 @@ public class OptionsConstants {
     // public static final String PILOT_RIDE_WASH= "ride_wash"; //$NON-NLS$
     public static final String PILOT_SHAKY_STICK = "shaky_stick"; // $NON-NLS$
     // public static final String PILOT_SLUGGER= "slugger"; //$NON-NLS$
-    // public static final String PILOT_SPEED_DEMON= "speed_demon"; //$NON-NLS$
+    public static final String PILOT_SPEED_DEMON= "speed_demon"; //$NON-NLS$
     // public static final String PILOT_STAND_ASIDE= "stand_aside"; //$NON-NLS$
     // public static final String PILOT_SWORDSMAN= "swordsman"; //$NON-NLS$
     // public static final String PILOT_TM_= "tm_"; //$NON-NLS$

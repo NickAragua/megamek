@@ -600,16 +600,16 @@ public class Protomech extends Entity {
      */
     public int getRunMPwithoutMyomerBooster(boolean gravity,
             boolean ignoreheat, boolean ignoremodulararmor) {
-        return super.getRunMP(gravity, ignoreheat, ignoremodulararmor);
+        return super.getRunMP(gravity, ignoreheat, ignoremodulararmor) + getFixedMPAdjustment();
     }
 
     @Override
     public int getRunMP(boolean gravity, boolean ignoreheat,
             boolean ignoremodulararmor) {
         if (hasMyomerBooster()) {
-            return (getWalkMP(gravity, ignoreheat, ignoremodulararmor) * 2);
+            return (getWalkMP(gravity, ignoreheat, ignoremodulararmor) * 2) + getFixedMPAdjustment();
         }
-        return super.getRunMP(gravity, ignoreheat, ignoremodulararmor);
+        return super.getRunMP(gravity, ignoreheat, ignoremodulararmor) + getFixedMPAdjustment();
     }
 
     /**
@@ -2338,5 +2338,13 @@ public class Protomech extends Entity {
         roll.addModifier(TargetRoll.CHECK_FALSE,
                          "Protomechs cannot fall");
         return roll;
-    }   
+    }
+    
+    /**
+     * Convenience function that returns the fixed, linear MP adjustments.
+     * E.g. +1 for using 'speed demon'.
+     */
+    private int getFixedMPAdjustment() {
+        return isUsingSpeedDemon() ? 1 : 0;
+    }
 }

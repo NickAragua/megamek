@@ -297,6 +297,7 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
     protected boolean findingClub = false;
     protected boolean armsFlipped = false;
     protected boolean unjammingRAC = false;
+    protected boolean usingSpeedDemon = false;
     protected boolean selfDestructing = false;
     protected boolean selfDestructInitiated = false;
     protected boolean selfDestructedThisTurn = false;
@@ -6270,6 +6271,7 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
         spotTargetId = Entity.NONE;
         setClearingMinefield(false);
         setUnjammingRAC(false);
+        setUsingSpeedDemon(false);
         crew.setKoThisRound(false);
         m_lNarcedBy |= m_lPendingNarc;
         if (pendingINarcPods.size() > 0) {
@@ -7130,9 +7132,9 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
 
         if ((overallMoveType == EntityMovementType.MOVE_SPRINT
                 || overallMoveType == EntityMovementType.MOVE_VTOL_SPRINT)
-            && (used > ((int) Math.ceil(2.0 * this.getWalkMP())))) {
+            && (used > getSprintMPwithoutMASC())) {
             roll.append(new PilotingRollData(getId(), 0,
-                                             "sprinting with active MASC/Supercharger"));
+                                             "sprinting with active MASC"));
         } else {
             roll.addModifier(TargetRoll.CHECK_FALSE,
                              "Check false: Entity is not attempting to sprint with MASC");
@@ -7154,7 +7156,7 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
                 || overallMoveType == EntityMovementType.MOVE_VTOL_SPRINT)
             && (used > ((int) Math.ceil(2.5 * this.getWalkMP())))) {
             roll.append(new PilotingRollData(getId(), 0,
-                                             "sprinting with active MASC/Supercharger"));
+                                             "sprinting with active Supercharger"));
         } else {
             roll.addModifier(TargetRoll.CHECK_FALSE,
                              "Check false: Entity is not attempting to sprint with Supercharger");
@@ -7168,7 +7170,7 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
      * Checks if the entity is attempting to sprint with supercharger engaged.
      * If so, returns the target roll for the piloting skill check.
      */
-    public PilotingRollData checkUsingOverdrive (EntityMovementType overallMoveType) {
+    public PilotingRollData checkUsingOverdrive(EntityMovementType overallMoveType) {
         PilotingRollData roll = getBasePilotingRoll(overallMoveType);
 
         if ((overallMoveType == EntityMovementType.MOVE_SPRINT
@@ -7188,7 +7190,7 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
      * Checks if the entity is attempting to increase two speed categories.
      * If so, returns the target roll for the piloting skill check.
      */
-    public PilotingRollData checkGunningIt (EntityMovementType overallMoveType) {
+    public PilotingRollData checkGunningIt(EntityMovementType overallMoveType) {
         PilotingRollData roll = getBasePilotingRoll(overallMoveType);
 
         if (game.getOptions().booleanOption(OptionsConstants.ADVGRNDMOV_VEHICLE_ACCELERATION)
@@ -9938,7 +9940,7 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
         // if you're charging or finding a club, it's already declared
         if (isUnjammingRAC() || isCharging() || isMakingDfa() || isRamming()
             || isFindingClub() || isOffBoard() || isAssaultDropInProgress()
-            || isDropping()) {
+            || isDropping() || isUsingSpeedDemon()) {
             return false;
         }
 
@@ -15994,5 +15996,13 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
      */
     public boolean isOffBoardObserved(int teamID) {
         return offBoardShotObservers.contains(teamID);
+    }
+
+    public boolean isUsingSpeedDemon() {
+        return usingSpeedDemon;
+    }
+
+    public void setUsingSpeedDemon(boolean usingSpeedDemon) {
+        this.usingSpeedDemon = usingSpeedDemon;
     }
 }

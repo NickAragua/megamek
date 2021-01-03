@@ -6589,6 +6589,10 @@ public class Server implements Runnable {
                 return;
             }
         }
+        
+        if (md.contains(MoveStepType.SPEED_DEMON)) {
+            entity.setUsingSpeedDemon(true);
+        }
 
         if (md.contains(MoveStepType.CAREFUL_STAND)) {
             entity.setCarefulStand(true);

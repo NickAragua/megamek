@@ -1903,6 +1903,12 @@ public class MoveStep implements Serializable {
         // guilty until proven innocent
         movementType = EntityMovementType.MOVE_ILLEGAL;
 
+        if (type == MoveStepType.SPEED_DEMON) {
+            // speed demon keeps previous movement type
+            movementType = prev != null ? prev.movementType : EntityMovementType.MOVE_NONE;
+            return;
+        }
+        
         // Crushing buildings creates rubble, and Dropships can't drive on
         // rubble, so they get stuck
         if ((entity instanceof Dropship)

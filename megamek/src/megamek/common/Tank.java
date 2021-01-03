@@ -2194,7 +2194,7 @@ public class Tank extends Entity {
     @Override
     public int getRunMPwithoutMASC(boolean gravity, boolean ignoreheat,
             boolean ignoremodulararmor) {
-        return super.getRunMP(gravity, ignoreheat, ignoremodulararmor);
+        return super.getRunMP(gravity, ignoreheat, ignoremodulararmor) + getFixedMPAdjustment(false);
     }
 
     /*
@@ -2206,7 +2206,7 @@ public class Tank extends Entity {
     public int getRunMP(boolean gravity, boolean ignoreheat,
             boolean ignoremodulararmor) {
         if (hasArmedMASC()) {
-            return (getWalkMP(gravity, ignoreheat, ignoremodulararmor) * 2);
+            return (getWalkMP(gravity, ignoreheat, ignoremodulararmor) * 2) + getFixedMPAdjustment(false);
         }
         return getRunMPwithoutMASC(gravity, ignoreheat, ignoremodulararmor);
     }
@@ -2218,11 +2218,6 @@ public class Tank extends Entity {
      */
     @Override
     public int getSprintMP() {
-        // Overdrive
-        if (game != null
-                && game.getOptions().booleanOption(OptionsConstants.ADVGRNDMOV_VEHICLE_ADVANCED_MANEUVERS)) {
-            return getSprintMP(true, false, false);
-        }
         return getSprintMP(true, false, false);
     }
 
@@ -2238,7 +2233,7 @@ public class Tank extends Entity {
                 .booleanOption(OptionsConstants.ADVGRNDMOV_VEHICLE_ADVANCED_MANEUVERS)) {
             if (hasArmedMASC()) {
                 return (int) Math.ceil(getWalkMP(gravity, ignoreheat,
-                        ignoremodulararmor) * 2.5);
+                        ignoremodulararmor) * 2.5) + getFixedMPAdjustment(true);
             } else {
                 return getSprintMPwithoutMASC(gravity, ignoreheat, ignoremodulararmor);
             }
@@ -2269,7 +2264,7 @@ public class Tank extends Entity {
         if (game != null && game.getOptions()
                 .booleanOption(OptionsConstants.ADVGRNDMOV_VEHICLE_ADVANCED_MANEUVERS)) {
             return (int) Math.ceil(getWalkMP(gravity, ignoreheat,
-                    ignoremodulararmor) * 2.0);
+                    ignoremodulararmor) * 2.0) + getFixedMPAdjustment(true);
         } else {
             return getRunMPwithoutMASC(gravity, ignoreheat, ignoremodulararmor);
         }
@@ -4356,6 +4351,14 @@ public class Tank extends Entity {
 
     public void setHasNoControlSystems(boolean hasNoControlSystems) {
         this.hasNoControlSystems = hasNoControlSystems;
+    }
+    
+    /**
+     * Convenience function that returns the fixed, linear MP adjustments.
+     * E.g. the -1 for hardened armor and +2 for using 'speed demon'.
+     */
+    private int getFixedMPAdjustment(boolean sprint) {
+        return (isUsingSpeedDemon() ? (sprint ? 2 : 1) : 0);
     }
 
     /**
