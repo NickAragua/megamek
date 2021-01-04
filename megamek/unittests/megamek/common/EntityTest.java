@@ -113,15 +113,24 @@ public class EntityTest {
             e = mfp.getEntity();
             e.setCrew(new Crew(CrewType.SINGLE));
             e.getCrew().getOptions().initialize();
+            e.setGame(new Game());
 
             int expectedRunMPNormal = 8;
+            int expectedRunMPGravity = 6; // with 1.2g
             int expectedRunMPSpeedDemon = 9;
+            int expectedRunMPGravitySpeedDemon = 7;
             int expectedSprintMPNormal = 10;
+            int expectedSprintMPGravity = 8;
             int expectedSprintMPSpeedDemon = 12;
+            int expectedSprintMPGravitySpeedDemon = 10;
             int expectedRunMPMascSuperCharger = 13;
             int expectedRunMPMascSuperChargerSpeedDemon = 14;
+            int expectedRunMPMascSuperChargerGravity = 10;
+            int expectedRunMPMascSuperChargerGravitySpeedDemon = 11;
             int expectedSprintMPMascSuperCharger = 15;
             int expectedSprintMPMascSuperChargerSpeedDemon = 17;
+            int expectedSprintMPMascSuperChargerGravity = 12;
+            int expectedSprintMPMascSuperChargerGravitySpeedDemon = 14;
 
             
             TestCase.assertEquals(expectedRunMPNormal, e.getRunMPwithoutMASC());
@@ -135,6 +144,21 @@ public class EntityTest {
             TestCase.assertEquals(expectedRunMPMascSuperChargerSpeedDemon, e.getRunMP());
             TestCase.assertEquals(expectedSprintMPSpeedDemon, e.getSprintMPwithoutMASC());
             TestCase.assertEquals(expectedSprintMPMascSuperChargerSpeedDemon, e.getSprintMP());
+            
+            e.setUsingSpeedDemon(false);
+            e.getGame().getPlanetaryConditions().setGravity((float) 1.2);
+            
+            TestCase.assertEquals(expectedRunMPGravity, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPMascSuperChargerGravity, e.getRunMP());
+            TestCase.assertEquals(expectedSprintMPGravity, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPMascSuperChargerGravity, e.getSprintMP());
+            
+            e.setUsingSpeedDemon(true);
+            TestCase.assertEquals(expectedRunMPGravitySpeedDemon, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPMascSuperChargerGravitySpeedDemon, e.getRunMP());
+            TestCase.assertEquals(expectedSprintMPGravitySpeedDemon, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPMascSuperChargerGravitySpeedDemon, e.getSprintMP());
+            
             
         } catch (Exception exc){
             TestCase.fail(exc.getMessage());
@@ -155,20 +179,33 @@ public class EntityTest {
             e = mfp.getEntity();
             e.setCrew(new Crew(CrewType.SINGLE));
             e.getCrew().getOptions().initialize();
+            e.setGame(new Game());
 
             int expectedRunMPNormal = 9;
             int expectedRunMPSpeedDemon = 10;
-            // it's a trick, protomechs can't sprint
-            int expectedSprintMPNormal = 9;
-            int expectedSprintMPNormalSpeedDemon = 10;
+            int expectedRunMPGravity = 8; // with 1.2 g
+            int expectedRunMPGravitySpeedDemon = 9;
+            // protomechs can't sprint
             
             TestCase.assertEquals(expectedRunMPNormal, e.getRunMPwithoutMASC());
-            TestCase.assertEquals(expectedSprintMPNormal, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPNormal, e.getSprintMPwithoutMASC());
             
             e.setUsingSpeedDemon(true);
             
             TestCase.assertEquals(expectedRunMPSpeedDemon, e.getRunMPwithoutMASC());
-            TestCase.assertEquals(expectedSprintMPNormalSpeedDemon, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPSpeedDemon, e.getSprintMPwithoutMASC());
+            
+            e.setUsingSpeedDemon(false);
+            e.getGame().getPlanetaryConditions().setGravity((float) 1.2);
+            
+            TestCase.assertEquals(expectedRunMPGravity, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPGravity, e.getSprintMPwithoutMASC());
+            
+            e.setUsingSpeedDemon(true);
+            
+            TestCase.assertEquals(expectedRunMPGravitySpeedDemon, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPGravitySpeedDemon, e.getSprintMPwithoutMASC());
+            
             
         } catch (Exception exc){
             TestCase.fail(exc.getMessage());
@@ -193,13 +230,21 @@ public class EntityTest {
             e.getGame().getOptions().getOption(OptionsConstants.ADVGRNDMOV_VEHICLE_ADVANCED_MANEUVERS).setValue(true);
 
             int expectedRunMPNormal = 17;
+            int expectedRunMPGravity = 14; // with 1.2g
             int expectedRunMPSpeedDemon = 18;
+            int expectedRunMPGravitySpeedDemon = 15;
             int expectedSprintMPNormal = 22;
+            int expectedSprintMPGravity = 18;
             int expectedSprintMPSpeedDemon = 24;
+            int expectedSprintMPGravitySpeedDemon = 20;
             int expectedRunMPMascSuperCharger = 22;
+            int expectedRunMPMascSuperChargerGravity = 18;
             int expectedRunMPMascSuperChargerSpeedDemon = 23;
+            int expectedRunMPMascSuperChargerGravitySpeedDemon = 19;
             int expectedSprintMPMascSuperCharger = 28;
+            int expectedSprintMPMascSuperChargerGravity = 23;
             int expectedSprintMPMascSuperChargerSpeedDemon = 30;
+            int expectedSprintMPMascSuperChargerGravitySpeedDemon = 25;
 
             
             TestCase.assertEquals(expectedRunMPNormal, e.getRunMPwithoutMASC());
@@ -213,6 +258,23 @@ public class EntityTest {
             TestCase.assertEquals(expectedRunMPMascSuperChargerSpeedDemon, e.getRunMP());
             TestCase.assertEquals(expectedSprintMPSpeedDemon, e.getSprintMPwithoutMASC());
             TestCase.assertEquals(expectedSprintMPMascSuperChargerSpeedDemon, e.getSprintMP());
+            
+            e.setUsingSpeedDemon(false);
+            e.getGame().getPlanetaryConditions().setGravity((float) 1.2);
+            
+            TestCase.assertEquals(expectedRunMPGravity, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPMascSuperChargerGravity, e.getRunMP());
+            TestCase.assertEquals(expectedSprintMPGravity, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPMascSuperChargerGravity, e.getSprintMP());
+            
+            e.setUsingSpeedDemon(true);
+            
+            TestCase.assertEquals(expectedRunMPGravitySpeedDemon, e.getRunMPwithoutMASC());
+            TestCase.assertEquals(expectedRunMPMascSuperChargerGravitySpeedDemon, e.getRunMP());
+            TestCase.assertEquals(expectedSprintMPGravitySpeedDemon, e.getSprintMPwithoutMASC());
+            TestCase.assertEquals(expectedSprintMPMascSuperChargerGravitySpeedDemon, e.getSprintMP());
+            
+            
             
         } catch (Exception exc){
             TestCase.fail(exc.getMessage());
