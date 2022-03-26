@@ -5690,6 +5690,8 @@ public class Server implements Runnable {
         r.subject = entity.getId();
         r.indent();
         addReport(r);
+        
+        entity.checkJuryRiggingDestruction(vPhaseReport);
 
         return false;
     }
@@ -21161,6 +21163,11 @@ public class Server implements Runnable {
                 a.setRandomMove(false);
             }
         }
+        
+        if (a.isOutControl()) {
+            e.checkJuryRiggingDestruction(vPhaseReport);
+        }
+        
         return vReport;
     }
 
@@ -28474,6 +28481,8 @@ public class Server implements Runnable {
             checkForCollapse(game.getBoard().getBuildingAt(fallPos),
                              game.getPositionMap(), fallPos, false, vPhaseReport);
         }
+        
+        entity.checkJuryRiggingDestruction(vPhaseReport);
 
         return vPhaseReport;
     }

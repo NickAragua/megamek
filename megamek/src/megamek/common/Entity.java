@@ -29,7 +29,6 @@ import megamek.common.force.Force;
 import megamek.common.icons.Camouflage;
 import megamek.common.options.*;
 import megamek.common.preference.PreferenceManager;
-import megamek.common.util.StringUtil;
 import megamek.common.weapons.*;
 import megamek.common.weapons.battlearmor.ISBAPopUpMineLauncher;
 import megamek.common.weapons.bayweapons.AR10BayWeapon;
@@ -16256,5 +16255,15 @@ public abstract class Entity extends TurnOrdered implements Transporter, Targeta
      */
     public boolean hasMulId() {
         return mulId > 0;
+    }
+    
+    /**
+     * Loop through all components and check if they will be 
+     * @param vPhaseReport
+     */
+    public void checkJuryRiggingDestruction(Vector<Report> vPhaseReport) {
+        for (Mounted mounted : getEquipment()) {
+            mounted.checkJuryRiggingDestruction(vPhaseReport);
+        }
     }
 }

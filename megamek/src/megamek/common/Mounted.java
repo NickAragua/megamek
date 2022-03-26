@@ -167,6 +167,9 @@ public class Mounted implements Serializable, RoundUpdated, PhaseUpdated {
 
     // for Armored components
     private boolean armoredComponent = false;
+    
+    // whether this part is jury-rigged
+    private boolean isJuryRigged = false;
 
     // called shots status, sort of like another mode
     private CalledShot called = new CalledShot();
@@ -1722,6 +1725,19 @@ public class Mounted implements Serializable, RoundUpdated, PhaseUpdated {
     public boolean isArmored() {
         return armoredComponent;
     }
+    
+
+    /**
+     * Is the part jury-rigged or not?
+     * May cause some problems upon usage or fall.
+     */
+    public boolean isJuryRigged() {
+        return isJuryRigged;
+    }
+    
+    public void setJuryRigged(boolean value) {
+        isJuryRigged = value;
+    }
 
     public void setQuirks(WeaponQuirks quirks) {
         this.quirks = quirks;
@@ -2066,4 +2082,50 @@ public class Mounted implements Serializable, RoundUpdated, PhaseUpdated {
                 curMode().equals("Homing");
     }
 
+    /**
+     * Performs jury-rigging check if necessary; reports result.
+     */
+    public void checkJuryRiggingDestruction(Vector<Report> vPhaseReport) {
+        // if this is not jury rigged, or is already non-functional due to being busted
+        // or blown off, then don't bother with this
+        if (!isJuryRigged() || isHit() || isDestroyed() || isMissing()) {
+            return;
+        }
+        
+        int roll = Compute.d6(2);
+        boolean breaks = roll >= 7;
+        
+        // add the report regardless
+        Report r = new Report(2318);
+        r.subject = this.getEntity().getId();
+        r.indent();
+        r.add(getName());
+        r.add(roll);
+        r.choose(breaks);
+        vPhaseReport.add(r);
+        
+        if (breaks) {
+            setHit(true);
+            
+            // 'hit' all critical slots associated with this piece of equipment
+            // no ammo explosions or anything, it just croaks
+            for (int critIndex = 0; critIndex < getEntity().getNumberOfCriticals(getLocation()); critIndex++) {
+                CriticalSlot cs = getEntity().getCritical(getLocation(), critIndex); 
+                
+                if (cs != null) {
+                    cs.setHit(true);
+                }
+            }
+            
+            if (isSplit()) {
+                for (int critIndex = 0; critIndex < getEntity().getNumberOfCriticals(getSecondLocation()); critIndex++) {
+                    CriticalSlot cs = getEntity().getCritical(getLocation(), critIndex); 
+                    
+                    if (cs != null) {
+                        cs.setHit(true);
+                    }
+                }
+            }
+        }
+    }
 }
