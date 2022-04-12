@@ -195,6 +195,11 @@ public class EquipmentType implements ITechnology {
      */
     public Vector<String> endTurnModes = new Vector<>();
 
+    /**
+     * Whether the equipment can be jury-rigged; the vast majority can
+     */
+    protected boolean canBeJuryRigged = true;
+    
     // static list of eq
     protected static Vector<EquipmentType> allTypes;
     protected static Hashtable<String, EquipmentType> lookupHash;
@@ -1491,6 +1496,13 @@ public class EquipmentType implements ITechnology {
      */
     public int getHeat() {
         return 0;
+    }
+    
+    /**
+     * Whether this type of equipment can be jury-rigged
+     */
+    public boolean canBeJuryRigged() {
+        return canBeJuryRigged;
     }
 
     /**

@@ -56,6 +56,7 @@ public abstract class InfantryWeapon extends Weapon {
         bursts = 0;
         infantryRange = 0;
         infDamageClass = WEAPON_NA;
+        canBeJuryRigged = false;
     }
 
     public double getInfantryDamage() {

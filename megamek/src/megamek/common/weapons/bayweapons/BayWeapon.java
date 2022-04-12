@@ -43,6 +43,8 @@ public abstract class BayWeapon extends Weapon {
                 .setAdvancement(DATE_ES, 2200, 2400).setProductionFactions(F_TA)
                 .setTechRating(RATING_D).setAvailability(RATING_C, RATING_E, RATING_D, RATING_C)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        
+        canBeJuryRigged = false; // the bay can't be jury-rigged, individual weapons can
     }
 
     @Override

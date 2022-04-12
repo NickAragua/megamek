@@ -51,6 +51,7 @@ public class DiveBombAttack extends Weapon {
         flags = flags.or(F_DIVE_BOMB).or(F_SOLO_ATTACK);
         hittable = false;
         capital = true;
+        canBeJuryRigged = false;
     }
 
     /*

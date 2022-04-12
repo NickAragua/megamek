@@ -392,6 +392,7 @@ public class MiscType extends EquipmentType {
 
     /** Creates new MiscType */
     public MiscType() {
+        canBeJuryRigged = false;
     }
 
     public int getBaseDamageAbsorptionRate() {
@@ -1904,6 +1905,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_TH).setTechRating(RATING_D)
                 .setAvailability(RATING_C, RATING_C, RATING_C, RATING_C)
                 .setStaticTechLevel(SimpleTechLevel.INTRO);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -1931,6 +1933,7 @@ public class MiscType extends EquipmentType {
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CWX)
                 .setProductionFactions(F_CWX, F_CWF, F_LC).setTechRating(RATING_E)
                 .setAvailability(RATING_X, RATING_X, RATING_E, RATING_D);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -1954,6 +1957,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_FS).setTechRating(RATING_E)
                 .setAvailability(RATING_X, RATING_F, RATING_F, RATING_X)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -1976,6 +1980,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_FS).setTechRating(RATING_C)
                 .setAvailability(RATING_F, RATING_X, RATING_X, RATING_X)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -1998,6 +2003,7 @@ public class MiscType extends EquipmentType {
             .setProductionFactions(F_CHH).setTechRating(RATING_E)
             .setAvailability(RATING_E, RATING_X, RATING_F, RATING_E)
             .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2019,6 +2025,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_CSJ).setTechRating(RATING_D)
                 .setAvailability(RATING_X, RATING_X, RATING_C, RATING_C)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2043,6 +2050,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_CSR).setTechRating(RATING_F)
                 .setAvailability(RATING_X, RATING_X, RATING_F, RATING_D)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2063,6 +2071,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_CBS).setTechRating(RATING_E)
                 .setAvailability(RATING_X, RATING_X, RATING_E, RATING_D)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2106,6 +2115,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH).setReintroductionFactions(F_CC).setTechRating(RATING_E)
                 .setAvailability(RATING_D, RATING_F, RATING_E, RATING_D);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2129,6 +2139,7 @@ public class MiscType extends EquipmentType {
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CIH)
                 .setProductionFactions(F_CIH).setTechRating(RATING_F)
                 .setAvailability(RATING_X, RATING_F, RATING_E, RATING_D);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2155,6 +2166,7 @@ public class MiscType extends EquipmentType {
             .setProductionFactions(F_FS, F_LC).setTechRating(RATING_E)
             .setAvailability(RATING_X, RATING_X, RATING_F, RATING_E)
             .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2178,7 +2190,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3067, 3085, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, true, false, false, false).setPrototypeFactions(F_MERC)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2202,7 +2214,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3067, 3085, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, true, false, false, false).setPrototypeFactions(F_CJF)
                 .setProductionFactions(F_CJF).setStaticTechLevel(SimpleTechLevel.ADVANCED);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2222,7 +2234,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3067, 3085, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false).setPrototypeFactions(F_CBS)
                 .setProductionFactions(F_CSR).setStaticTechLevel(SimpleTechLevel.ADVANCED);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2248,7 +2260,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_LC, F_CWX).setTechRating(RATING_E)
                 .setAvailability(RATING_X, RATING_X, RATING_E, RATING_D)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2273,6 +2285,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_FS).setTechRating(RATING_D)
                 .setAvailability(RATING_X, RATING_F, RATING_E, RATING_D)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2304,7 +2317,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(DATE_NONE, DATE_ES, 3078, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, true, false, false)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2329,7 +2342,7 @@ public class MiscType extends EquipmentType {
                 .setClanApproximate(true, false, false, false, false)
                 .setPrototypeFactions(F_DC)
                 .setProductionFactions(F_DC);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -2354,6 +2367,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3130, 3135, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true)
                 .setPrototypeFactions(F_CHH).setProductionFactions(F_CHH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4786,6 +4800,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3071, 3084, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_WB)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4810,6 +4825,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(DATE_NONE, 3090, 3110, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false).setPrototypeFactions(F_LC, F_CJF)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4831,6 +4847,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3057, DATE_NONE, 3079, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_FS)
                 .setProductionFactions(F_FS).setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4851,6 +4868,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3015, 3022, 3025, DATE_NONE, DATE_NONE)
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_LC, F_FS)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.INTRO);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4873,6 +4891,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3064, 3083, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_LC)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4895,6 +4914,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(DATE_NONE, 3061, 3079, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_LC)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4918,6 +4938,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(2400, 2420, 3075, DATE_NONE, DATE_NONE)
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH).setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4947,6 +4968,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3067, 3079, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_LC)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -4976,6 +4998,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3067, 3079, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_LC)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5005,6 +5028,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3067, 3079, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_LC)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5024,6 +5048,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3051, 3082, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_LC)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5043,6 +5068,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3050, 3058, 3060).setISApproximate(true, false, false)
                 .setPrototypeFactions(F_DC).setProductionFactions(F_DC)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5064,6 +5090,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3072, 3087, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false).setPrototypeFactions(F_CJF)
                 .setProductionFactions(F_CJF).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5089,6 +5116,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3065, 3091, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_DC)
                 .setProductionFactions(F_DC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5113,6 +5141,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3065, 3091, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_DC)
                 .setProductionFactions(F_DC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5139,6 +5168,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3065, 3091, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_DC)
                 .setProductionFactions(F_DC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5218,6 +5248,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_DC)
                 .setProductionFactions(F_DC)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5245,6 +5276,7 @@ public class MiscType extends EquipmentType {
                 setPrototypeFactions(F_CS)
                 .setProductionFactions(F_CS)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5269,6 +5301,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_FS)
                 .setProductionFactions(F_FS)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5296,6 +5329,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_DC)
                 .setProductionFactions(F_DC)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5396,6 +5430,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(2452, DATE_NONE, DATE_NONE, 2476, DATE_NONE)
                 .setISApproximate(true, false, false, true, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH);
+        // TBD? misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5499,6 +5534,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2845, 2850, 3055, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, true, false, false, false).setPrototypeFactions(F_CGB)
                 .setProductionFactions(F_CGB);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5551,6 +5587,7 @@ public class MiscType extends EquipmentType {
                 .setClanApproximate(false, true, false, false, false)
                 .setPrototypeFactions(F_FS, F_CGS).setProductionFactions(F_FS)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5607,6 +5644,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(DATE_ES, DATE_ES, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5634,6 +5672,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(DATE_ES, DATE_ES, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5655,6 +5694,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_LC)
                 .setProductionFactions(F_RS)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5781,6 +5821,8 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2695).setPrototypeFactions(F_TH)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
 
+        misc.canBeJuryRigged = true;
+        
         return misc;
     }
 
@@ -5800,7 +5842,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(2695, DATE_NONE, DATE_NONE, 2780)
                 .setClanAdvancement(2695).setPrototypeFactions(F_TH)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5821,6 +5863,8 @@ public class MiscType extends EquipmentType {
                 .setPrototypeFactions(F_WB).setReintroductionFactions(F_RS)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
 
+        misc.canBeJuryRigged = true;
+        
         return misc;
     }
 
@@ -5840,7 +5884,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3064, DATE_NONE, DATE_NONE, 3078, 3082)
                 .setPrototypeFactions(F_WB).setReintroductionFactions(F_RS)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -5967,6 +6011,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2430, 2445, 2490, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6085,6 +6130,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_E, RATING_F, RATING_D, RATING_C).setISAdvancement(2560, 2576, 3048, 2835, 3045)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH).setReintroductionFactions(F_CC);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6110,6 +6156,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(2560, DATE_NONE, DATE_NONE, 2576, DATE_NONE)
                 .setISApproximate(true, false, false, true, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH).setReintroductionFactions(F_CC);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6136,6 +6183,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, true, false, false).setPrototypeFactions(F_CS)
                 .setProductionFactions(F_RS)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6157,12 +6205,13 @@ public class MiscType extends EquipmentType {
         // Since its Tactical Handbook Using TO Values
         misc.rulesRefs = "Unofficial";
         misc.techAdvancement.setTechBase(TECH_BASE_IS).setIntroLevel(false).setUnofficial(true).setTechRating(RATING_E)
-        .setAvailability(RATING_X, RATING_X, RATING_F, RATING_E)
-        .setISAdvancement(DATE_NONE, 3058, 3082, DATE_NONE, DATE_NONE)
-        .setISApproximate(false, false, false, false, false)
-        .setPrototypeFactions(F_CS)
-        .setProductionFactions(F_RS)
-        .setStaticTechLevel(SimpleTechLevel.UNOFFICIAL);
+            .setAvailability(RATING_X, RATING_X, RATING_F, RATING_E)
+            .setISAdvancement(DATE_NONE, 3058, 3082, DATE_NONE, DATE_NONE)
+            .setISApproximate(false, false, false, false, false)
+            .setPrototypeFactions(F_CS)
+            .setProductionFactions(F_RS)
+            .setStaticTechLevel(SimpleTechLevel.UNOFFICIAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6188,7 +6237,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2830, 2832, 2835, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CGS)
                 .setProductionFactions(F_CGS);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6217,6 +6266,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2890, 2900, 2905, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CSJ)
                 .setProductionFactions(F_CSJ);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6242,6 +6292,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_E, RATING_F, RATING_D, RATING_C).setISAdvancement(2595, 2597, 3050, 2845, 3045)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH).setReintroductionFactions(F_CC);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6266,6 +6317,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_F, RATING_F, RATING_X, RATING_X)
                 .setISAdvancement(2595, DATE_NONE, DATE_NONE, 2597, DATE_NONE)
                 .setISApproximate(true, false, false, true, false).setPrototypeFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6291,6 +6343,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2830, 2832, 2835, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CSJ)
                 .setProductionFactions(F_CSJ);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6326,6 +6379,7 @@ public class MiscType extends EquipmentType {
                 .setPrototypeFactions(F_DC, F_CNC)
                 .setProductionFactions(F_DC)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6354,6 +6408,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3058, 3080, 3085, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, true, false, false, false).setPrototypeFactions(F_DC, F_CNC)
                 .setProductionFactions(F_DC).setStaticTechLevel(SimpleTechLevel.UNOFFICIAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6375,6 +6430,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3020, 3025, DATE_NONE, 3046, DATE_NONE)
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_CC)
                 .setProductionFactions(F_CC).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6403,6 +6459,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3059, DATE_NONE, 3080, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false).setPrototypeFactions(F_CSJ)
                 .setProductionFactions(F_CSF).setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6430,6 +6487,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3065, DATE_NONE, DATE_NONE, 3085, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CCY)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6452,6 +6510,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6477,6 +6536,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2586, 2590, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6501,6 +6561,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(2586, DATE_NONE, DATE_NONE, 2590, DATE_NONE)
                 .setISApproximate(true, false, false, true, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6525,6 +6586,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6549,6 +6611,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_ES, DATE_ES, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6572,6 +6635,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3045, 3055, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(true, true, false, false, false).setPrototypeFactions(F_FS)
                 .setProductionFactions(F_FS);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6595,6 +6659,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_ES, DATE_ES, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6663,6 +6728,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_E, RATING_F, RATING_D, RATING_C).setISAdvancement(2592, 2598, 3045, 2855, 3035)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH).setReintroductionFactions(F_FW);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6686,6 +6752,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(true, false, false, true, true).setPrototypeFactions(F_TH).setProductionFactions(F_TH)
                 .setReintroductionFactions(F_FW)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6708,6 +6775,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2816, 2818, 2830, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CSA)
                 .setProductionFactions(F_CSA);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6732,6 +6800,8 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(DATE_NONE, 3061, 3085, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, true, false, false).setPrototypeFactions(F_CGS)
                 .setProductionFactions(F_CSF, F_RD).setStaticTechLevel(SimpleTechLevel.STANDARD);
+        
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6754,6 +6824,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3065, 3071, 3097, DATE_NONE, DATE_NONE)
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_DC)
                 .setProductionFactions(F_DC);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6791,6 +6862,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_FS, F_LC)
                 .setProductionFactions(F_FS)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6818,6 +6890,7 @@ public class MiscType extends EquipmentType {
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CMN)
                 .setProductionFactions(F_CMN)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6845,6 +6918,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2305, 2315, 2320, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_TA)
                 .setProductionFactions(F_FS);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6867,6 +6941,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6889,6 +6964,7 @@ public class MiscType extends EquipmentType {
                 .setClanApproximate(false, false, false, false, false).setTechRating(RATING_C)
                 .setAvailability(RATING_B, RATING_B, RATING_B, RATING_B)
                 .setStaticTechLevel(SimpleTechLevel.INTRO);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6914,6 +6990,7 @@ public class MiscType extends EquipmentType {
             .setProductionFactions(F_FS).setTechRating(RATING_E)
             .setAvailability(RATING_X, RATING_X, RATING_F, RATING_E)
             .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6935,6 +7012,7 @@ public class MiscType extends EquipmentType {
             .setProductionFactions(F_FS).setTechRating(RATING_E)
             .setAvailability(RATING_X, RATING_X, RATING_F, RATING_E)
             .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6954,6 +7032,7 @@ public class MiscType extends EquipmentType {
         misc.techAdvancement.setTechBase(TECH_BASE_IS).setISAdvancement(2559, DATE_NONE, DATE_NONE, 2567, DATE_NONE)
                 .setISApproximate(true, false, false, true, false).setPrototypeFactions(F_TH).setTechRating(RATING_E)
                 .setAvailability(RATING_F, RATING_X, RATING_X, RATING_X).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6972,6 +7051,7 @@ public class MiscType extends EquipmentType {
         misc.techAdvancement.setTechBase(TECH_BASE_IS).setISAdvancement(3022, DATE_NONE, DATE_NONE, 3040, DATE_NONE)
                 .setISApproximate(true, false, false, true, false).setPrototypeFactions(F_FS).setTechRating(RATING_E)
                 .setAvailability(RATING_X, RATING_F, RATING_X, RATING_X).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -6994,6 +7074,7 @@ public class MiscType extends EquipmentType {
             .setISApproximate(false, false, false, false, false)
             .setPrototypeFactions(F_TH)
             .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7016,6 +7097,7 @@ public class MiscType extends EquipmentType {
             .setProductionFactions(F_CCY)
             .setTechRating(RATING_F)
             .setAvailability(RATING_X, RATING_E, RATING_D, RATING_C).setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7034,6 +7116,7 @@ public class MiscType extends EquipmentType {
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CJF)
                 .setProductionFactions(F_CJF).setTechRating(RATING_F)
                 .setAvailability(RATING_X, RATING_X, RATING_E, RATING_D);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7060,6 +7143,7 @@ public class MiscType extends EquipmentType {
                 .setProductionFactions(F_FS).setTechRating(RATING_E)
                 .setAvailability(RATING_X, RATING_X, RATING_X, RATING_E)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7085,6 +7169,8 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7108,6 +7194,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7131,6 +7218,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7154,6 +7242,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7174,6 +7263,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7197,6 +7287,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7220,6 +7311,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7243,6 +7335,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7268,6 +7361,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7288,6 +7382,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7308,6 +7403,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7328,6 +7424,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7348,6 +7445,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7368,6 +7466,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7390,6 +7489,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7414,6 +7514,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7439,6 +7540,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7464,6 +7566,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7487,6 +7590,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7535,6 +7639,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false).setPrototypeFactions(F_TA)
                 .setProductionFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7579,6 +7684,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7601,6 +7707,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(true, false, false, false, false)
                 .setClanAdvancement(2400, 2415, 2420, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7623,6 +7730,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(true, true, false, false, false)
                 .setClanAdvancement(2312, 2320, 2323, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, true, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7649,6 +7757,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7697,6 +7806,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_ES, 2131, 2135, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7796,6 +7906,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, true, false, false, false)
                 .setClanAdvancement(DATE_ES, 2200, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, true, false, false, false).setProductionFactions(F_TA);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7839,6 +7950,7 @@ public class MiscType extends EquipmentType {
                 .setTechRating(RATING_E).setAvailability(RATING_X, RATING_E, RATING_F, RATING_F)
                 .setAdvancement(2575, DATE_NONE, DATE_NONE, 2820, DATE_NONE)
                 .setPrototypeFactions(F_TH).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7882,6 +7994,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7926,6 +8039,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7951,6 +8065,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3053, DATE_NONE, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_FS, F_LC)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -7970,6 +8085,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(DATE_PS, 3080, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, true, false, false, false).setProductionFactions(F_WB)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8010,6 +8126,7 @@ public class MiscType extends EquipmentType {
         misc.rulesRefs = "239, TM";
         misc.techAdvancement.setTechBase(TECH_BASE_ALL).setAdvancement(DATE_PS, DATE_PS, DATE_PS)
                 .setTechRating(RATING_A).setAvailability(RATING_A, RATING_A, RATING_A, RATING_A);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8030,6 +8147,7 @@ public class MiscType extends EquipmentType {
         misc.rulesRefs = "239, TM";
         misc.techAdvancement.setTechBase(TECH_BASE_ALL).setAdvancement(DATE_PS, DATE_PS, DATE_PS)
             .setTechRating(RATING_A).setAvailability(RATING_A, RATING_A, RATING_A, RATING_A);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8050,6 +8168,7 @@ public class MiscType extends EquipmentType {
         misc.techAdvancement.setAdvancement(DATE_PS, DATE_PS, DATE_PS);
         misc.techAdvancement.setTechRating(RATING_A);
         misc.techAdvancement.setAvailability(new int[] { RATING_A, RATING_A, RATING_A, RATING_A });
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8071,6 +8190,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3069, 3079, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_LC)
                 .setProductionFactions(F_LC).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8097,6 +8217,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(2630, DATE_NONE, DATE_NONE, 2790, 3099)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_TH)
                 .setReintroductionFactions(F_FS).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8157,6 +8278,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
     public static MiscType createISCollapsibleCommandModule() {
@@ -8178,6 +8300,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2700, 2710, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8202,6 +8325,7 @@ public class MiscType extends EquipmentType {
         misc.techAdvancement.setTechBase(TECH_BASE_ALL).setAdvancement(DATE_PS, DATE_PS, DATE_PS)
             .setTechRating(RATING_A).setAvailability(RATING_C, RATING_C, RATING_C, RATING_C)
             .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8229,6 +8353,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_C, RATING_D, RATING_D, RATING_C)
                 .setAdvancement(DATE_NONE, 2300, 2300).setISApproximate(false, true, false)
                 .setProductionFactions(F_TA);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8271,6 +8396,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3059, 3115, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, true, false, false, false).setPrototypeFactions(F_CSF, F_LC)
                 .setProductionFactions(F_CSF).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8295,6 +8421,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3120, DATE_NONE, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CSF)
                 .setProductionFactions(F_CSF).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8320,6 +8447,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3137, DATE_NONE, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CSF)
                 .setProductionFactions(F_CSF).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8342,6 +8470,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2540, 3059, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_FS, F_LC);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8361,6 +8490,7 @@ public class MiscType extends EquipmentType {
         misc.techAdvancement.setTechBase(TECH_BASE_ALL)
                 .setTechRating(RATING_B).setAvailability(RATING_C, RATING_E, RATING_D, RATING_C)
                 .setISAdvancement(DATE_PS, DATE_PS).setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8386,6 +8516,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(2615, 2630, DATE_NONE, 2790, 3110).setISApproximate(true, false, false, false, true)
                 .setPrototypeFactions(F_TH).setProductionFactions(F_TH).setReintroductionFactions(F_CS)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8408,6 +8539,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8452,12 +8584,12 @@ public class MiscType extends EquipmentType {
         misc.cost = 2000;
         misc.rulesRefs = "237, TM";
         misc.techAdvancement.setTechBase(TECH_BASE_ALL).setIntroLevel(false).setUnofficial(false)
-        .setTechRating(RATING_A).setAvailability(RATING_A, RATING_A, RATING_A, RATING_A)
-        .setISAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
-        .setISApproximate(false, false, false, false, false)
-        .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
-        .setClanApproximate(false, false, false, false, false);
-
+            .setTechRating(RATING_A).setAvailability(RATING_A, RATING_A, RATING_A, RATING_A)
+            .setISAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
+            .setISApproximate(false, false, false, false, false)
+            .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
+            .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8570,6 +8702,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_X, RATING_X, RATING_E, RATING_F)
                 .setISAdvancement(3070, 3085).setPrototypeFactions(F_WB)
                 .setProductionFactions(F_RS).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8591,6 +8724,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8618,6 +8752,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3070, 3080, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, true, false, false, false).setPrototypeFactions(F_CFM)
                 .setProductionFactions(F_CSF).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8640,6 +8775,7 @@ public class MiscType extends EquipmentType {
                 .setTechRating(RATING_F).setAvailability(RATING_X, RATING_X, RATING_E, RATING_D)
                 .setClanAdvancement(3067, DATE_NONE, 3077, DATE_NONE, DATE_NONE)
                 .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8663,6 +8799,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3066, 3072, 3085, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_CCC)
                 .setProductionFactions(F_CHH).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8690,6 +8827,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2645, 2655, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8715,6 +8853,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2740, 2751, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8741,7 +8880,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3136, DATE_NONE, DATE_NONE, 3140, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_RS)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8765,9 +8904,8 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3137, DATE_NONE, DATE_NONE, 3140, DATE_NONE)
                 .setISApproximate(false, false, false, false, false).setPrototypeFactions(F_RS)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
-        // FIXME: implement game rules, only BV and construction rules
-        // implemented
     }
 
     // Repeating TSEMP - See Weapons.
@@ -8791,6 +8929,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_X, RATING_X, RATING_X, RATING_F)
                 .setISAdvancement(3133, DATE_NONE, DATE_NONE, 3138, DATE_NONE)
                 .setPrototypeFactions(F_RS).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8812,6 +8951,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_X, RATING_X, RATING_X, RATING_F)
                 .setISAdvancement(3136, DATE_NONE, DATE_NONE, 3142, DATE_NONE)
                 .setPrototypeFactions(F_RS).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8833,6 +8973,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_X, RATING_X, RATING_X, RATING_F)
                 .setISAdvancement(3137, DATE_NONE, DATE_NONE, 3142, DATE_NONE)
                 .setPrototypeFactions(F_RS).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -8874,6 +9015,7 @@ public class MiscType extends EquipmentType {
             .setClanAdvancement(DATE_NONE,DATE_NONE, 3101,DATE_NONE,DATE_NONE)
             .setPrototypeFactions(F_DC).setProductionFactions(F_DC)
             .setStaticTechLevel(SimpleTechLevel.STANDARD);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9062,6 +9204,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_C, RATING_C, RATING_C, RATING_C)
                 .setAdvancement(2300, 2350, 2490, DATE_NONE, DATE_NONE)
                 .setPrototypeFactions(F_TA).setProductionFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9105,6 +9248,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(3070, 3109, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false).setPrototypeFactions(F_MERC)
                 .setProductionFactions(F_RD).setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9130,7 +9274,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3028, 3050, 3055, DATE_NONE, DATE_NONE)
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_FS, F_CC)
                 .setProductionFactions(F_CC);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9158,6 +9302,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3035, 3045, 3055, DATE_NONE, DATE_NONE)
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_FS)
                 .setProductionFactions(F_FS);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9180,6 +9325,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(3028, DATE_NONE, DATE_NONE, 3050)
                 .setISApproximate(true, false, false, false)
                 .setPrototypeFactions(F_CC).setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9201,6 +9347,7 @@ public class MiscType extends EquipmentType {
                 .setApproximate(true, false, false).setPrototypeFactions(F_TA)
                 .setProductionFactions(F_TH).setTechRating(RATING_C)
                 .setAvailability(RATING_C, RATING_C, RATING_C, RATING_C);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9804,6 +9951,7 @@ public class MiscType extends EquipmentType {
                 .setAdvancement(2450, 3082, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setApproximate(false, true, false, false, false)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9826,7 +9974,7 @@ public class MiscType extends EquipmentType {
                 .setAdvancement(2450, 3082, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setApproximate(false, true, false, false, false).setPrototypeFactions(F_FS, F_LC)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
-
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -9849,6 +9997,7 @@ public class MiscType extends EquipmentType {
                 .setAdvancement(2320, 3079, DATE_NONE, DATE_NONE, DATE_NONE)
                 .setApproximate(false, true, false, false, false)
                 .setStaticTechLevel(SimpleTechLevel.ADVANCED);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -10023,6 +10172,7 @@ public class MiscType extends EquipmentType {
                 .setISAdvancement(2790, 2800, 3058, DATE_NONE, DATE_NONE)
                 .setISApproximate(true, true, false, false, false).setPrototypeFactions(F_CS)
                 .setProductionFactions(F_CS);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -10069,6 +10219,7 @@ public class MiscType extends EquipmentType {
                 .setAvailability(RATING_E, RATING_F, RATING_F, RATING_E).setISAdvancement(2718, 2720, 3060, 2766, 3057)
                 .setISApproximate(true, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH).setReintroductionFactions(F_FW, F_WB);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -10095,6 +10246,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2718, 2720, 3060, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, false, false, false, false).setPrototypeFactions(F_TH)
                 .setProductionFactions(F_TH);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -10205,6 +10357,7 @@ public class MiscType extends EquipmentType {
                 .setClanAdvancement(2887, 2890, 3051, DATE_NONE, DATE_NONE)
                 .setClanApproximate(true, true, false, false, false).setPrototypeFactions(F_CBS)
                 .setProductionFactions(F_CBS);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -10248,6 +10401,7 @@ public class MiscType extends EquipmentType {
                 .setISApproximate(false, false, false, false, false)
                 .setClanAdvancement(DATE_PS, DATE_PS, DATE_PS, DATE_NONE, DATE_NONE)
                 .setClanApproximate(false, false, false, false, false);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -11150,6 +11304,7 @@ public class MiscType extends EquipmentType {
         misc.techAdvancement.setISAdvancement(DATE_NONE, 2720, DATE_NONE);
         misc.techAdvancement.setTechRating(RATING_D);
         misc.techAdvancement.setAvailability(new int[] { RATING_D, RATING_D, RATING_D, RATING_X });
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -11186,6 +11341,7 @@ public class MiscType extends EquipmentType {
             .setPrototypeFactions(F_TH).setProductionFactions(F_TH)
             .setTechRating(RATING_D).setAvailability(RATING_D, RATING_E, RATING_F, RATING_F)
             .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 
@@ -11206,6 +11362,7 @@ public class MiscType extends EquipmentType {
                 .setAdvancement(2600, DATE_NONE, DATE_NONE, 2781, 3130)
                 .setTechRating(RATING_E).setAvailability(RATING_F, RATING_X, RATING_X, RATING_F)
                 .setStaticTechLevel(SimpleTechLevel.EXPERIMENTAL);
+        misc.canBeJuryRigged = true;
         return misc;
     }
 

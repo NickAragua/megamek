@@ -41,5 +41,6 @@ public abstract class InfantryAttack extends Weapon {
         criticals = 0;
         bv = 0;
         cost = 0;
+        canBeJuryRigged = false;
     }
 }

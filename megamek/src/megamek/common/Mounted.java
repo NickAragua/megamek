@@ -541,6 +541,11 @@ public class Mounted implements Serializable, RoundUpdated, PhaseUpdated {
         if (isArmored()) {
             desc.append(" (armored)");
         }
+        
+        if (isJuryRigged()) {
+            desc.append(" (jury-rigged)");
+        }
+        
         return desc.toString();
     }
 

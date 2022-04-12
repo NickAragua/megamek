@@ -50,6 +50,7 @@ public class SpaceBombAttack extends Weapon {
         flags = flags.or(F_SPACE_BOMB).or(F_SOLO_ATTACK);
         hittable = false;
         capital = true;
+        canBeJuryRigged = false;
     }
 
     /*

@@ -351,6 +351,7 @@ public class AmmoType extends EquipmentType {
         explosive = true;
         instantModeSwitch = false;
         ammoRatio = 0;
+        canBeJuryRigged = false; // can't jury-rig ammo
     }
 
     /**

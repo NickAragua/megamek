@@ -51,6 +51,7 @@ public class AltitudeBombAttack extends Weapon {
         flags = flags.or(F_ALT_BOMB);
         hittable = false;
         capital = true;
+        canBeJuryRigged = false;
     }
 
     /*
