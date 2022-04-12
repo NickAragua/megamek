@@ -35,9 +35,9 @@ public class InfantryPistolWhisper4Standard extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Whisper-4 (Standard Rounds)");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = .42;
        tonnage =  0.0012;
-       infantryDamage =  0.37;
+       infantryDamage =  0.35;
        infantryRange =  1;
        ammoWeight =  0.00005;
        cost = 650;

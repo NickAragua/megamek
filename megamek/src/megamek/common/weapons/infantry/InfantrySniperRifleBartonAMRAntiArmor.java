@@ -36,7 +36,7 @@ public class InfantrySniperRifleBartonAMRAntiArmor extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Barton AMR (Anti-Armor)");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = 1.176;
        tonnage =  0.014;
        ammoWeight =  0.014;
        cost = 700;
@@ -44,7 +44,7 @@ public class InfantrySniperRifleBartonAMRAntiArmor extends InfantryWeapon {
        shots =  8;
        bursts =  1;
        flags = flags.or(F_NO_FIRES).or(F_DIRECT_FIRE).or(F_BALLISTIC).or(F_INF_ENCUMBER);
-       infantryDamage = 0.78;
+       infantryDamage = 0.74;
        infantryRange = 7;
        rulesRefs = "Shrapnel #1";
        techAdvancement

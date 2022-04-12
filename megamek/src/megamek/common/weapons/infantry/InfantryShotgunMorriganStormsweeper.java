@@ -32,9 +32,9 @@ public class InfantryShotgunMorriganStormsweeper extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Morrigan Stormsweeper");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = 1.125;
        tonnage =  0.004;
-       infantryDamage =  0.59;
+       infantryDamage =  0.56;
        infantryRange =  1;
        ammoWeight =  0.004;
        cost = 800;

@@ -34,9 +34,9 @@ public class InfantrySMGHouwei extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Houwei");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = .36;
        tonnage =  0.0035;
-       infantryDamage =  0.38;
+       infantryDamage =  0.36;
        infantryRange =  1;
        ammoWeight =  0.0035;
        cost = 250;

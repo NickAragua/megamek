@@ -6210,6 +6210,24 @@
 			<availability>CLAN:6</availability>
 		</model>
 	</chassis>
+	<chassis name='Iron Cheetah' unitType='Mek'>
+		<availability>CSJ:3+,DC:2+:3062</availability>
+		<model name='A'>
+			<availability>CSJ:6,DC:6:3062</availability>
+		</model>
+		<model name='B'>
+			<availability>CSJ:6,DC:6:3062</availability>
+		</model>
+		<model name='C'>
+			<availability>CSJ:6,DC:6:3062</availability>
+		</model>
+		<model name='D'>
+			<availability>CSJ:4,DC:4:3062</availability>
+		</model>
+		<model name='Prime'>
+			<availability>CSJ:8,DC:8+:3062</availability>
+		</model>
+	</chassis>
 	<chassis name='Ironsides' unitType='Aero'>
 		<availability>CS:6,CLAN:1,CNC:2,NIOPS:6,WOB:6,FWL.OH:1-,DC:2</availability>
 		<model name='IRN-SD1'>
@@ -10037,7 +10055,7 @@
 			<availability>HL:6,FRR:8,General:2,Periphery.Deep:7,MERC:8,Periphery:8</availability>
 		</model>
 		<model name='SCP-1O'>
-			<availability>IS:6</availability>
+			<availability>MERC.KH:2,MERC.WD:2,IS:3-,MERC:2-</availability>
 		</model>
 	</chassis>
 	<chassis name='Scout JumpShip' unitType='Jumpship'>
@@ -12371,13 +12389,16 @@
 	</chassis>
 	<chassis name='Wolverine' unitType='Mek'>
 		<availability>CC:6,HL:4,FRR:6,IS:6,Periphery.Deep:5,WOB:3-,SIC:5,FS:7,Periphery:5,TC:5,CS:3-,LA:6,CNC:2,FWL:9,NIOPS:3-,MH:4,DC:6</availability>
+		<model name='WVR-6D'>
+			<availability>FS:1</availability>
+		</model>
 		<model name='WVR-6M'>
 			<roles>recon</roles>
 			<availability>Periphery.MW:4,PIR:4,Periphery.ME:4,FWL:6,MH:4</availability>
 		</model>
 		<model name='WVR-6R'>
 			<roles>recon</roles>
-			<availability>HL:3,General:5,Periphery.Deep:8,Periphery:5</availability>
+			<availability>HL:3,General:4,Periphery:5</availability>
 		</model>
 		<model name='WVR-7D'>
 			<roles>recon</roles>

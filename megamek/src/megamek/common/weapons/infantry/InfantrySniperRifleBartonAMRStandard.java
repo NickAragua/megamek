@@ -35,9 +35,9 @@ public class InfantrySniperRifleBartonAMRStandard extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Barton AMR (Standard)");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = .98;
        tonnage =  0.014;
-       infantryDamage =  0.65;
+       infantryDamage =  0.61;
        infantryRange =  7;
        ammoWeight =  0.014;
        cost = 700;

@@ -32,9 +32,9 @@ public class InfantryShotgunDPS305 extends InfantryWeapon {
        setInternalName(name);
        addLookupName("DPS-305");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = .27;
        tonnage =  0.0035;
-       infantryDamage =  0.28;
+       infantryDamage =  0.27;
        infantryRange =  0;
        ammoWeight =  0.0035;
        cost = 350;

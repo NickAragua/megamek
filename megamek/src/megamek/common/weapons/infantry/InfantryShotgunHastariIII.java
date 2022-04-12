@@ -32,9 +32,9 @@ public class InfantryShotgunHastariIII extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Hastari III");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = .27;
        tonnage =  0.0035;
-       infantryDamage =  0.28;
+       infantryDamage =  0.27;
        infantryRange =  1;
        ammoWeight =  0.0035;
        cost = 800;

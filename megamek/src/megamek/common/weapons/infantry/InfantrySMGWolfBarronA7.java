@@ -31,9 +31,9 @@ public class InfantrySMGWolfBarronA7 extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Wolf-Barron A7");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = .2475;
        tonnage =  0.0029;
-       infantryDamage =  0.23;
+       infantryDamage =  0.25;
        infantryRange =  0;
        ammoWeight =  0.0029;
        cost = 450;

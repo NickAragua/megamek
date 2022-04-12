@@ -32,9 +32,9 @@ public class InfantryShotgunDaystarIIC extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Daystar II (C)");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = .202;
        tonnage =  0.0028;
-       infantryDamage =  0.21;
+       infantryDamage =  0.2;
        infantryRange =  1;
        ammoWeight =  0.0028;
        cost = 250;

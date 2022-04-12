@@ -35,9 +35,9 @@ public class InfantrySniperRifleSR17SunsKiller extends InfantryWeapon {
        setInternalName(name);
        addLookupName("SR-17 Suns Killer");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = .35;
        tonnage =  0.006;
-       infantryDamage =  0.37;
+       infantryDamage =  0.35;
        infantryRange =  5;
        ammoWeight =  0.006;
        cost = 600;

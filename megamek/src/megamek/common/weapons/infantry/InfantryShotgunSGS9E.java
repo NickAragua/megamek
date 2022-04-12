@@ -32,9 +32,9 @@ public class InfantryShotgunSGS9E extends InfantryWeapon {
        setInternalName(name);
        addLookupName("SGS-9E");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = 1.375;
        tonnage =  0.0045;
-       infantryDamage =  0.64;
+       infantryDamage =  0.69;
        infantryRange =  1;
        ammoWeight =  0.0045;
        cost = 1500;

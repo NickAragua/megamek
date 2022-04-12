@@ -34,9 +34,9 @@ public class InfantrySMGBoudicca7 extends InfantryWeapon {
        setInternalName(name);
        addLookupName("Boudicca-7");
        ammoType = AmmoType.T_INFANTRY;
-       bv = 1;
+       bv = 1.375;
        tonnage =  0.0021;
-       infantryDamage =  0.64;
+       infantryDamage =  0.69;
        infantryRange =  1;
        ammoWeight =  0.0021;
        cost = 700;
